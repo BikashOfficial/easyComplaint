@@ -4,6 +4,12 @@ A full-stack web application for managing user complaints with separate user and
 
 ---
 
+## Live Demo
+
+Access the deployed application here: [https://easy-complaint-delta.vercel.app/](https://easy-complaint-delta.vercel.app/)
+
+--- 
+
 ## Table of Contents
 - [Overview](#overview)
 - [Features](#features)
