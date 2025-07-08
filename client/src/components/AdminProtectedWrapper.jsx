@@ -1,14 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { UserDataContext } from '../contexts/UserContext'
+import { AdminDataContext } from '../contexts/AdminContext'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 function AdminProtectedWrapper({ children }) {
-
     const token = localStorage.getItem('token')
     const navigate = useNavigate()
-
-    const { user, setUser } = useContext(UserDataContext)
+    const { admin, setAdmin } = useContext(AdminDataContext)
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
@@ -22,7 +20,7 @@ function AdminProtectedWrapper({ children }) {
             }
         }).then(res => {
             if (res.status === 200) {
-                setUser(res.data)
+                setAdmin(res.data.user)
                 setIsLoading(false)
             }
         }).catch(err => {
