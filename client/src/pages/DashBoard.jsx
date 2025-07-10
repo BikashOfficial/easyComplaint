@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {
   Plus,
   Star,
@@ -13,6 +13,7 @@ import {
 import Complain from '../components/Complain';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { UserDataContext } from '../contexts/UserContext';
 
 // Mock Complain component for demo
 
@@ -20,6 +21,7 @@ import Footer from '../components/Footer';
 const DashBoard = () => {
   const [showComplaintModal, setShowComplaintModal] = useState(false);
   const [hoveredFeature, setHoveredFeature] = useState(null);
+  const { user } = useContext(UserDataContext);
 
   const features = [
     {
@@ -86,7 +88,7 @@ const DashBoard = () => {
           <div className="text-center mb-16">
             <div className="inline-flex lg:py-6 lg:px-20 items-center lg:mb-10 px-4 py-2 bg-orange-100 rounded-full text-orange-700 lg:text-xl text-sm font-medium mb-6">
               <Sparkles className="w-4 h-4 mr-2" />
-              Welcome back, Alex!
+              Welcome back{user?.fullName ? `, ${user.fullName}` : ''}!
             </div>
 
 
