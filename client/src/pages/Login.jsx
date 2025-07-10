@@ -21,7 +21,7 @@ export default function NetworkLogin() {
     const handleSubmit = async () => {
         try {
             const endpoint = activeTab === 'user' ? '/user/login' : '/admin/login';
-            const response = await fetch(`http://localhost:5000${endpoint}` , {
+            const response = await fetch(`${import.meta.env.VITE_BASE_URL}${endpoint}` , {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password })
