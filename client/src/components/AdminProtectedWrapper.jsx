@@ -20,7 +20,7 @@ function AdminProtectedWrapper({ children }) {
             }
         }).then(res => {
             if (res.status === 200) {
-                setAdmin(res.data.user)
+                setAdmin(res.data.admin)
                 setIsLoading(false)
             }
         }).catch(err => {

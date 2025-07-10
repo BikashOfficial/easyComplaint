@@ -22,7 +22,7 @@ function UserProtectedWrapper({ children }) {
       }
     }).then(res => {
       if (res.status === 200) {
-        setUser(res.data)
+        setUser(res.data.user)
         setIsLoading(false)
       }
     }).catch(err => {

@@ -115,7 +115,7 @@ const registerAdmin = async (req, res) => {
 
 const getProfile = async (req, res) => {
   try {
-    return res.status(200).json({ user: req.user });
+    return res.status(200).json({ admin: req.user });
   } catch (error) {
     console.error("Error fetching profile:", error);
     res.status(500).json({ message: "Server error. Please try again later." });
