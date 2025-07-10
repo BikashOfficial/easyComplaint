@@ -38,7 +38,7 @@ const adminLogin = async (req, res) => {
     const token = jwt.sign(
       { userId: user._id, email: user.email, isAdmin: true },
       process.env.JWT_SECRET,
-      { expiresIn: "1h" }
+      { expiresIn: "140h" }
     );
 
     res.status(200).json({
@@ -90,7 +90,7 @@ const registerAdmin = async (req, res) => {
       const token = jwt.sign(
         { userId: savedUser._id, email: savedUser.email, isAdmin: true },
         process.env.JWT_SECRET,
-        { expiresIn: "1h" }
+        { expiresIn: "140h" }
       );
 
       res.status(201).json({
